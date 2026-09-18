@@ -249,8 +249,8 @@ section{position:relative}
 .chapter__photo{display:none}
 @media (min-width:1024px){
   .chapter--portrait .chapter__bg{overflow:hidden}
-  .chapter--portrait .chapter__bg img{position:absolute;inset:-8%;width:116%;height:116%;max-width:none;filter:blur(30px) brightness(.62) saturate(1.1)}
-  .chapter--portrait .chapter__photo{display:block;position:absolute;z-index:1;right:calc(var(--gutter) + 7vw);top:50%;height:min(70vh,640px);width:auto;aspect-ratio:361/640;transform:translateY(-46%);border:1px solid rgba(255,255,255,.22);box-shadow:0 40px 80px -30px rgba(0,0,0,.85)}
+  .chapter--portrait .chapter__bg img{position:absolute;inset:-8%;width:116%;height:116%;max-width:none;filter:blur(30px) brightness(.5) saturate(1.15)}
+  .chapter--portrait .chapter__photo{display:block;position:absolute;z-index:1;right:calc(var(--gutter) + 7vw);top:50%;height:min(64vh,502px);width:auto;aspect-ratio:480/502;transform:translateY(-46%);border:1px solid rgba(255,255,255,.22);box-shadow:0 40px 80px -30px rgba(0,0,0,.85)}
 }
 .journey__dots{display:none}
 /* modo fixado (desktop + GSAP) */
@@ -512,14 +512,14 @@ section{position:relative}
 
     <article class="chapter chapter--portrait" aria-labelledby="ch1">
       <!-- MOBILE: foto real da Dra. na clínica (Google Maps, 2667x4000 originais; aqui 800 de largura).
-           DESKTOP: retrato de estúdio do Instagram (só existe em 361x640px) em moldura NÍTIDA no tamanho nativo,
-           sobre a mesma foto desfocada como fundo — assim não ampliamos acima da resolução original.
-           TODO-CONFIRMAR: com o arquivo original ("DSC06662.jpg") dá para voltar ao modo tela cheia. -->
+           DESKTOP: retrato de estúdio do Instagram da clínica (@sublimebyjm; só existe em 480px de largura) em moldura
+           NÍTIDA no tamanho nativo, sobre a mesma foto desfocada como fundo — assim não ampliamos acima da resolução original.
+           TODO-CONFIRMAR: pedir o arquivo original desta sessão de fotos para voltar ao modo tela cheia. -->
       <picture class="chapter__bg">
-        <source media="(min-width:1024px)" srcset="assets/dra-retrato-361x640.jpg">
+        <source media="(min-width:1024px)" srcset="assets/dra-estudio-480.jpg">
         <img src="assets/dra-clinica-800.jpg" alt="" loading="lazy" decoding="async" width="800" height="1199" style="object-position:86% 50%">
       </picture>
-      <img class="chapter__photo" src="assets/dra-retrato-361x640.jpg" alt="Dra. Jenifer Montalbo, farmacêutica esteta, de terno branco com os braços cruzados" width="361" height="640" loading="lazy" decoding="async">
+      <img class="chapter__photo" src="assets/dra-estudio-480.jpg" alt="Dra. Jenifer Montalbo, farmacêutica esteta, sentada em estúdio com roupa clara" width="480" height="502" loading="lazy" decoding="async">
       <p class="chapter__label"><span>01</span> — A Escuta</p>
       <div class="chapter__content">
         <h2 class="chapter__title reveal" id="ch1">Seu desejo em <em>primeiro lugar</em></h2>
