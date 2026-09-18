@@ -399,8 +399,16 @@ section{position:relative}
 .wa-float{position:fixed;right:16px;bottom:16px;z-index:70;display:flex;align-items:center;gap:10px;padding:0 20px 0 16px;height:56px;border-radius:999px;background:var(--wa);color:#fff;font-weight:700;font-size:.9rem;letter-spacing:.01em;box-shadow:0 14px 30px -10px rgba(18,140,74,.75),0 4px 10px rgba(0,0,0,.18);transition:transform .35s var(--ease),background .3s}
 .wa-float:hover{transform:translateY(-3px);background:var(--wa-2)}
 .wa-float svg{width:26px;height:26px;flex:none}
-.wa-float::before{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--wa);z-index:-1;animation:pulse 2.8s ease-out infinite}
-@keyframes pulse{0%{transform:scale(1);opacity:.5}70%,100%{transform:scale(1.28,1.5);opacity:0}}
+/* Animação chamativa (visível também no fundo escuro): anel de pulso em box-shadow + anel extra defasado + balanço do ícone a cada 5s */
+.wa-float{animation:waRing 2.4s ease-out infinite}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:inherit;background:rgba(37,211,102,.55);z-index:-1;animation:pulse 2.4s ease-out 1.2s infinite}
+.wa-float svg{transform-origin:50% 60%;animation:waWiggle 5s ease-in-out 1.5s infinite}
+@keyframes waRing{
+  0%{box-shadow:0 14px 30px -10px rgba(18,140,74,.75),0 4px 10px rgba(0,0,0,.18),0 0 0 0 rgba(37,211,102,.65)}
+  70%,100%{box-shadow:0 14px 30px -10px rgba(18,140,74,.75),0 4px 10px rgba(0,0,0,.18),0 0 0 22px rgba(37,211,102,0)}
+}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}70%,100%{transform:scale(1.35,1.7);opacity:0}}
+@keyframes waWiggle{0%,78%,100%{transform:rotate(0)}82%{transform:rotate(-16deg)}86%{transform:rotate(14deg)}90%{transform:rotate(-10deg)}94%{transform:rotate(6deg)}}
 @media (min-width:768px){.wa-float{right:28px;bottom:28px}}
 
 /* ============ REDUÇÃO DE MOVIMENTO ============ */
@@ -409,6 +417,7 @@ section{position:relative}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.2s!important}
   .js .reveal{transform:none}
   .js .hero .cas{animation:none;opacity:1}
+  .wa-float,.wa-float svg{animation:none}
   .wa-float::before{display:none}
 }
 </style>
