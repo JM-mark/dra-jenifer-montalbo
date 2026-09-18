@@ -292,9 +292,9 @@ section{position:relative}
 /* ============ SOBRE ============ */
 .about{padding:clamp(72px,11vw,140px) 0;background:var(--stone)}
 .about__grid{display:grid;gap:56px;align-items:center}
-.about__media{position:relative;max-width:460px;margin:0 auto;width:100%;isolation:isolate}
+.about__media{position:relative;max-width:361px;margin:0 auto;width:100%;isolation:isolate}
 .about__media picture,.about__media img{width:100%}
-.about__media img{aspect-ratio:4/5;object-fit:cover;border-radius:2px;transition:transform 1.2s var(--ease)}
+.about__media img{height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:2px;transition:transform 1.2s var(--ease)}
 .about__mask{overflow:hidden;border-radius:2px}
 .about__media:hover img{transform:scale(1.04)}
 .about__frame{position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--wine);z-index:-1}
@@ -619,12 +619,11 @@ section{position:relative}
     <div class="about__grid">
       <div class="about__media reveal">
         <span class="about__frame" aria-hidden="true"></span>
-        <!-- FOTO REAL da Dra. (recorte 4:5 da foto do Google Maps, 1281x1601 nativos) -->
+        <!-- FOTO REAL (retrato profissional do Instagram da Dra.). O Instagram só entrega 361x640px, então a moldura
+             tem largura máxima de 361px para não ampliar a imagem. TODO-CONFIRMAR: pedir o arquivo original ("DSC06662.jpg")
+             e, com ele, remover o max-width de .about__media para a foto ocupar a coluna inteira. -->
         <div class="about__mask">
-          <picture>
-            <source media="(min-width:900px)" srcset="assets/dra-sobre-1000.jpg">
-            <img src="assets/dra-sobre-700.jpg" alt="Dra. Jenifer Montalbo, farmacêutica esteta, em seu consultório em Valinhos" loading="lazy" decoding="async" width="700" height="875">
-          </picture>
+          <img src="assets/dra-retrato-361.jpg" alt="Dra. Jenifer Montalbo, farmacêutica esteta, de terno branco com os braços cruzados" loading="lazy" decoding="async" width="361" height="451">
         </div>
         <div class="about__tag"><img class="about__avatar" src="assets/dra-avatar.jpg" alt="" width="90" height="90" loading="lazy"><span><b>Dra. Jenifer Montalbo</b>Farmacêutica Esteta</span></div>
       </div>
