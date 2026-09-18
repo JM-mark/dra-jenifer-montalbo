@@ -109,6 +109,8 @@ img,picture,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,p{margin:0}
 button{font:inherit;cursor:pointer}
+/* Todos os links, botões e menus usam a sans do projeto (DM Sans) — nunca o padrão do sistema. A serifada (Bodoni Moda) fica só em logo e títulos. */
+a,button,.btn,.nav,.card__link{font-family:var(--sans)}
 :focus-visible{outline:2px solid var(--wine);outline-offset:3px}
 .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
 section{position:relative}
@@ -173,7 +175,7 @@ section{position:relative}
 .menu-open .drawer{opacity:1;visibility:visible}
 .menu-open .header{color:#fff;background:transparent;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
 .menu-open .header.is-scrolled .btn--main{background:var(--pearl);color:var(--ink)}
-.drawer a.dl{font-family:var(--serif);font-size:2rem;font-weight:400;letter-spacing:.03em;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.drawer a.dl{font-family:var(--sans);font-size:1.6rem;font-weight:500;letter-spacing:.04em;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
 .drawer .btn{margin-top:28px}
 @media (max-width:480px){
   .header .wrap{gap:6px}
